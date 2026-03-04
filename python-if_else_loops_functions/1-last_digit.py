@@ -6,10 +6,10 @@ if number > 0:
 else:
     last_digit = number % 10
 
-print("last_digit of {number} is {last_digit}", end=" ")
+output = f"last_digit of {number} is {last_digit}"
 if last_digit > 5:
-    print("and is greater than 5")
+    print(f"{output} and is greater than 5")
 elif last_digit == 0:
-    print("and is 0")
+    print(f"{output} and is 0")
 else:
-    print("and is less than 6 and not 0") 
+    print(f"{output} and is less than 6 and not 0") 
