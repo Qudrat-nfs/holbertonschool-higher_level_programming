@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-def number_keys(a_dictionary):
-    common = sorted(a_dictionary)
-    return len(common)
+def print_sorted_dictionary(a_dictionary):
+    common = len(a_dictionary.keys())
+    return sorted(common)
