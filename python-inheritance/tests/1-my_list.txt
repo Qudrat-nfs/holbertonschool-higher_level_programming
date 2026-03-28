@@ -6,7 +6,7 @@ First, we need to import the class MyList:
 
     >>> MyList = __import__('1-my_list').MyList
 
-Now, let's create a new list:
+Now, let's create a new list and add positive numbers:
 
     >>> my_list = MyList()
     >>> my_list.append(1)
@@ -14,18 +14,24 @@ Now, let's create a new list:
     >>> my_list.append(2)
     >>> my_list.append(3)
     >>> my_list.append(5)
-
-Print the list to verify the elements are inside:
-
     >>> print(my_list)
     [1, 4, 2, 3, 5]
-
-Now, let's print the sorted list using our new method:
-
     >>> my_list.print_sorted()
     [1, 2, 3, 4, 5]
-
-Finally, check that the original list was not modified:
-
     >>> print(my_list)
     [1, 4, 2, 3, 5]
+
+Now let's test with negative numbers:
+
+    >>> my_list2 = MyList()
+    >>> my_list2.append(2)
+    >>> my_list2.append(-5)
+    >>> my_list2.append(0)
+    >>> my_list2.append(-10)
+    >>> my_list2.append(4)
+    >>> print(my_list2)
+    [2, -5, 0, -10, 4]
+    >>> my_list2.print_sorted()
+    [-10, -5, 0, 2, 4]
+    >>> print(my_list2)
+    [2, -5, 0, -10, 4]
