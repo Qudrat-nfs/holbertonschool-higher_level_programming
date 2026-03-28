@@ -2,8 +2,6 @@
 Testing BaseGeometry class
 =========================================
 
-First, import the class and create an instance:
-
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
     >>> bg = BaseGeometry()
 
@@ -20,17 +18,17 @@ Testing integer_validator() with valid integers:
     >>> bg.integer_validator("width", 89)
     >>> bg.integer_validator("number", 1)
 
-Testing integer_validator() with non-integers (TypeError):
+Testing integer_validator() with invalid types (TypeError):
 
     >>> bg.integer_validator("name", "John")
     Traceback (most recent call last):
         ...
     TypeError: name must be an integer
 
-    >>> bg.integer_validator("price", 12.5)
+    >>> bg.integer_validator("float_val", 12.0)
     Traceback (most recent call last):
         ...
-    TypeError: price must be an integer
+    TypeError: float_val must be an integer
 
     >>> bg.integer_validator("float_zero", 0.0)
     Traceback (most recent call last):
@@ -67,6 +65,11 @@ Testing integer_validator() with non-integers (TypeError):
         ...
     TypeError: dict_val must be an integer
 
+    >>> bg.integer_validator("set_val", {1, 2})
+    Traceback (most recent call last):
+        ...
+    TypeError: set_val must be an integer
+
     >>> bg.integer_validator("none_val", None)
     Traceback (most recent call last):
         ...
@@ -76,6 +79,11 @@ Testing integer_validator() with non-integers (TypeError):
     Traceback (most recent call last):
         ...
     TypeError: string_number must be an integer
+
+    >>> bg.integer_validator("empty_string", "")
+    Traceback (most recent call last):
+        ...
+    TypeError: empty_string must be an integer
 
     >>> bg.integer_validator("inf_val", float('inf'))
     Traceback (most recent call last):
@@ -87,10 +95,10 @@ Testing integer_validator() with non-integers (TypeError):
         ...
     TypeError: nan_val must be an integer
 
-    >>> bg.integer_validator("type_obj", int)
+    >>> bg.integer_validator("complex_val", 1+2j)
     Traceback (most recent call last):
         ...
-    TypeError: type_obj must be an integer
+    TypeError: complex_val must be an integer
 
 Testing integer_validator() with 0 or negative integers (ValueError):
 
