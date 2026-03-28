@@ -32,10 +32,25 @@ Testing integer_validator() with non-integers (TypeError):
         ...
     TypeError: price must be an integer
 
+    >>> bg.integer_validator("float_zero", 0.0)
+    Traceback (most recent call last):
+        ...
+    TypeError: float_zero must be an integer
+
+    >>> bg.integer_validator("neg_float", -1.5)
+    Traceback (most recent call last):
+        ...
+    TypeError: neg_float must be an integer
+
     >>> bg.integer_validator("is_valid", True)
     Traceback (most recent call last):
         ...
     TypeError: is_valid must be an integer
+
+    >>> bg.integer_validator("is_valid_false", False)
+    Traceback (most recent call last):
+        ...
+    TypeError: is_valid_false must be an integer
 
     >>> bg.integer_validator("empty_list", [])
     Traceback (most recent call last):
@@ -57,15 +72,25 @@ Testing integer_validator() with non-integers (TypeError):
         ...
     TypeError: none_val must be an integer
 
-    >>> bg.integer_validator("float_val", 12.0)
-    Traceback (most recent call last):
-        ...
-    TypeError: float_val must be an integer
-
     >>> bg.integer_validator("string_number", "12")
     Traceback (most recent call last):
         ...
     TypeError: string_number must be an integer
+
+    >>> bg.integer_validator("inf_val", float('inf'))
+    Traceback (most recent call last):
+        ...
+    TypeError: inf_val must be an integer
+
+    >>> bg.integer_validator("nan_val", float('nan'))
+    Traceback (most recent call last):
+        ...
+    TypeError: nan_val must be an integer
+
+    >>> bg.integer_validator("type_obj", int)
+    Traceback (most recent call last):
+        ...
+    TypeError: type_obj must be an integer
 
 Testing integer_validator() with 0 or negative integers (ValueError):
 
@@ -78,3 +103,8 @@ Testing integer_validator() with 0 or negative integers (ValueError):
     Traceback (most recent call last):
         ...
     ValueError: distance must be greater than 0
+
+    >>> bg.integer_validator("minus_one", -1)
+    Traceback (most recent call last):
+        ...
+    ValueError: minus_one must be greater than 0
