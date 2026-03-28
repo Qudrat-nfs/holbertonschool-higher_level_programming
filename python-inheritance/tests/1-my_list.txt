@@ -1,0 +1,31 @@
+=========================================
+Testing the MyList class
+=========================================
+
+First, we need to import the class MyList:
+
+    >>> MyList = __import__('1-my_list').MyList
+
+Now, let's create a new list:
+
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+
+Print the list to verify the elements are inside:
+
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+Now, let's print the sorted list using our new method:
+
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+
+Finally, check that the original list was not modified:
+
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
