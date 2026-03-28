@@ -35,3 +35,11 @@ Now let's test with negative numbers:
     [-10, -5, 0, 2, 4]
     >>> print(my_list2)
     [2, -5, 0, -10, 4]
+
+Now let's test with an empty list:
+
+    >>> my_list3 = MyList()
+    >>> print(my_list3)
+    []
+    >>> my_list3.print_sorted()
+    []
