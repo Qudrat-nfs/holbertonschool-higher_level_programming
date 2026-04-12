@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""Module for appending a string to the end of a text file."""
-
+"""Module for saving a Python object to a file in JSON format."""
 import json
+
+
 def save_to_json_file(my_obj, filename):
-    """Appends a string to a text file (UTF8) and returns char count."""
+    """Writes an Object to a text file, using a JSON representation."""
     with open(filename, mode="w", encoding="utf-8") as file:
-        return json.loads(file.write(my_obj))
+        json.dump(my_obj, file)
