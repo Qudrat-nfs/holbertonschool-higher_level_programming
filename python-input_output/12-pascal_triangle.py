@@ -1,6 +1,9 @@
 #!/usr/bin/python3
+"""Module for Pascal's triangle."""
+
 
 def pascal_triangle(n):
+    """Returns a list of lists of integers representing Pascal's triangle."""
     if n <= 0:
         return []
 
