@@ -22,7 +22,11 @@ if __name__ == "__main__":
 
         if not json_data:
             print("No result")
-        else:
+        # Əgər gələn cavab birbaşa lüğətdirsə (dict)
+        elif isinstance(json_data, dict):
+            print("[{}] {}".format(json_data.get('id'), json_data.get('name')))
+        # Əgər gələn cavab siyahıdırsa (list)
+        elif isinstance(json_data, list):
             for user in json_data:
                 print("[{}] {}".format(user.get('id'), user.get('name')))
 
